@@ -138,6 +138,11 @@ Output: CLEANED
 **Improvement Idea:**
 I discovered an improvement that could streamline the workflow and enhance the user experience: adding a command to display a complete list of variables and their current values. This feature would provide users with a quick database overview without requiring individual GET requests.
 
+URL: https://simple-database-ldweiqy2yq-uc.a.run.app/all
+
+
+
+
 
 
 
