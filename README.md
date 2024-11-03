@@ -2,7 +2,7 @@
 
 This project is a simple database application that runs on Google App Engine. The app allows users to send HTTP requests to manage variables, supporting basic commands like setting and unsetting variables, counting by values, and undoing/redoing recent changes.
 
-Home URL: https://simple-database-ldweiqy2yq-uc.a.run.app/
+Home URL: https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app
 
 **Important Notes**
 **Stateful Management:** Each request is stateless by design on Google App Engine, so I use Google Datastore to store data between requests.
@@ -15,130 +15,130 @@ Home URL: https://simple-database-ldweiqy2yq-uc.a.run.app/
 **Sequence 1:**
 
 Set:
-Input: https://simple-database-ldweiqy2yq-uc.a.run.app/set?name=ex&value=10
+Input:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/set?name=ex&value=10
 Output: ex = 10
 
 Get:
-Input: https://simple-database-ldweiqy2yq-uc.a.run.app/get?name=ex
+Input:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/get?name=ex
 Output: 10
 
 Unset:
-Input: https://simple-database-ldweiqy2yq-uc.a.run.app/unset?name=ex
+Input:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/unset?name=ex
 Output: ex = None
 
 Get:
-Input: https://simple-database-ldweiqy2yq-uc.a.run.app/get?name=ex
+Input:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/get?name=ex
 Output: None
 
 End:
-Input: https://simple-database-ldweiqy2yq-uc.a.run.app/end
+Input:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/end
 Output: CLEANED
 
 **Sequence 2:**
 
 Set:
-Input: https://simple-database-ldweiqy2yq-uc.a.run.app/set?name=a&value=10
+Input:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/set?name=a&value=10
 Output: a = 10
 
 Set:
-Input: https://simple-database-ldweiqy2yq-uc.a.run.app/set?name=b&value=10
+Input:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/set?name=b&value=10
 Output: b = 10
 
 NumEqualTo:
-Input: https://simple-database-ldweiqy2yq-uc.a.run.app/numequalto?value=10
+Input:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/numequalto?value=10
 Output: 2
 
 NumEqualTo:
-Input: https://simple-database-ldweiqy2yq-uc.a.run.app/numequalto?value=20
+Input:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/numequalto?value=20
 Output: 0
 
 Set:
-Input: https://simple-database-ldweiqy2yq-uc.a.run.app/set?name=b&value=30
+Input:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/set?name=b&value=30
 Output: b = 30
 
 NumEqualTo:
-Input: https://simple-database-ldweiqy2yq-uc.a.run.app/numequalto?value=10
+Input:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/numequalto?value=10
 Output: 1
 
 End:
-Input: https://simple-database-ldweiqy2yq-uc.a.run.app/end
+Input:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/end
 Output: CLEANED
 
 
 **Sequence 3:**
 
 Set:
-Input: https://simple-database-ldweiqy2yq-uc.a.run.app/set?name=a&value=10
+Input:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/set?name=a&value=10
 Output: a = 10
 
 Set:
-Input: https://simple-database-ldweiqy2yq-uc.a.run.app/set?name=b&value=20
+Input:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/set?name=b&value=20
 Output: b = 20
 
 Get:
-Input: https://simple-database-ldweiqy2yq-uc.a.run.app/get?name=a
+Input:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/get?name=a
 Output: 10
 
 Get:
-Input: https://simple-database-ldweiqy2yq-uc.a.run.app/get?name=b
+Input:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/get?name=b
 Output: 20
 
 Undo:
-Input: https://simple-database-ldweiqy2yq-uc.a.run.app/undo
+Input:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/undo
 Output: b = None
 
 Get:
-Input: https://simple-database-ldweiqy2yq-uc.a.run.app/get?name=a
+Input:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/get?name=a
 Output: 10
 
 Get:
-Input: https://simple-database-ldweiqy2yq-uc.a.run.app/get?name=b
+Input:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/get?name=b
 Output: None
 
 Set:
-Input: https://simple-database-ldweiqy2yq-uc.a.run.app/set?name=a&value=40
+Input:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/set?name=a&value=40
 Output: a = 40
 
 Get:
-Input: https://simple-database-ldweiqy2yq-uc.a.run.app/get?name=a
+Input:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/get?name=a
 Output: 40
 
 Undo:
-Input: https://simple-database-ldweiqy2yq-uc.a.run.app/undo
+Input:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/undo
 Output: a = 10
 
 Get:
-Input: https://simple-database-ldweiqy2yq-uc.a.run.app/get?name=a
+Input:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/get?name=a
 Output: 10
 
 Undo:
-Input: https://simple-database-ldweiqy2yq-uc.a.run.app/undo
+Input:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/undo
 Output: a = None
 
 Get:
-Input: https://simple-database-ldweiqy2yq-uc.a.run.app/get?name=a
+Input:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/get?name=a
 Output: None
 
 Undo:
-Input: https://simple-database-ldweiqy2yq-uc.a.run.app/undo
+Input:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/undo
 Output: NO COMMANDS
 
 Redo:
-Input: https://simple-database-ldweiqy2yq-uc.a.run.app/redo
+Input:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/redo
 Output: a = 10
 
 Redo:
-Input: https://simple-database-ldweiqy2yq-uc.a.run.app/redo
+Input:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/redo
 Output: a = 40
 
 End:
-Input: https://simple-database-ldweiqy2yq-uc.a.run.app/end
+Input:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/end
 Output: CLEANED
 
 **Improvement Idea:**
 I discovered an improvement that could streamline the workflow and enhance the user experience: adding a command to display a complete list of variables and their current values. This feature would provide users with a quick database overview without requiring individual GET requests.
 
-URL: https://simple-database-ldweiqy2yq-uc.a.run.app/all
+URL:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/all
 
 
 
