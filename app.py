@@ -62,27 +62,39 @@ def count_variables_by_value(value):
     query.add_filter("value", "=", value)
     return len(list(query.fetch()))
 
-# Undo last set/unset command
-def undo_last_command():
-    last_command = get_last_history()
-    if last_command:
-        command = last_command["command"]
-        name = last_command["name"]
-        previous_value = last_command["previous_value"]
+def undo_or_redo(command_type):
+    if command_type == "undo":
+        last_command = get_last_history()
+        if not last_command:
+            return "NO COMMANDS"
+        redo_stack.append(last_command)  # Save to redo stack in case of undo
+    elif command_type == "redo":
+        if not redo_stack:
+            return "NO COMMANDS"
+        last_command = redo_stack.pop()  # Retrieve last undone command for redo
+    else:
+        return "Invalid command type"
 
-        if command == "set":
-            # If the last command was a set, revert it to previous_value
-            if previous_value is not None:
-                set_variable(name, previous_value)
-            else:
-                unset_variable(name)
-        elif command == "unset":
-            # If the last command was an unset, restore the value
-            set_variable(name, previous_value)
+    command = last_command["command"]
+    name = last_command["name"]
+    value = last_command["value"] if command_type == "redo" else last_command["previous_value"]
 
-        client.delete(last_command.key)  # Delete the last history item
-        return f"{name} = {get_variable(name) if get_variable(name) is not None else 'None'}"
-    return "NO COMMANDS"
+    if command == "set":
+        if value is not None:
+            set_variable(name, value)
+        else:
+            unset_variable(name)
+    elif command == "unset":
+        set_variable(name, value)
+
+    # Save back to history if it's a redo action
+    if command_type == "redo":
+        save_history(command, name, last_command["value"], last_command.get("previous_value"))
+    else:
+        client.delete(last_command.key)  # Delete last command in case of undo
+
+    return f"{name} = {get_variable(name) if get_variable(name) is not None else 'None'}"
+
 
 # Redo last undone command 
 # Clear all data
@@ -138,7 +150,12 @@ def numequalto_handler():
 # Handle for undo
 @app.route('/undo')
 def undo_handler():
-    return undo_last_command()
+    return undo_or_redo("undo")
+
+# Handle for redo
+@app.route('/redo')
+def redo_handler():
+    return undo_or_redo("redo")
 
 # Handle for end/cleanup
 @app.route('/end')
