@@ -110,6 +110,12 @@ def clear_data():
 
     return "CLEANED"
 
+def get_all_variables():
+    query = client.query(kind="Variable")
+    results = list(query.fetch())
+    variables = {entity.key.name: entity["value"] for entity in results}
+    return variables
+
 # Handle for setting a variable
 @app.route('/set')
 def set_handler():
@@ -161,6 +167,14 @@ def redo_handler():
 @app.route('/end')
 def end_handler():
     return clear_data()
+
+#### Improvement #####
+@app.route('/all')
+def all_variables_handler():
+    variables = get_all_variables()
+    if variables:
+        return "\n".join([f"{name} = {value}" for name, value in variables.items()])
+    return "No variables set"
 
 @app.route('/')
 def home():
