@@ -140,7 +140,7 @@ Output: CLEANED
 **Improvement Idea:**
 I discovered an improvement that could streamline the workflow and enhance the user experience: adding a command to display a complete list of variables and their current values. This feature would give users a quick database overview without requiring individual GET requests.
 
-URL:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/variables status
+URL:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/variablesStatus
 
 **Returns all history. The history is deleted with the end command**
 
