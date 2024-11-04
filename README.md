@@ -142,9 +142,11 @@ I discovered an improvement that could streamline the workflow and enhance the u
 
 URL:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/variablesStatus
 
-**Returns all history. The history is deleted with the end command**
+**Returns all history:**
 
 URL: https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/history
+
+ ** The history and status are deleted with the end command.
 
 
 
