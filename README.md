@@ -142,7 +142,7 @@ I discovered an improvement that could streamline the workflow and enhance the u
 
 URL:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/variablesStatus
 
-**Returns all history:**
+**Set and unset commands execution history:**
 
 URL: https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/history
 
