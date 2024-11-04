@@ -4,10 +4,12 @@ This project is a simple database application that runs on Google App Engine. Th
 
 Home URL: https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app
 
-**Important Notes**
+**Important Notes:**
+
 **Stateful Management:** Each request is stateless by design on Google App Engine, so I use Google Datastore to store data between requests.
+
 **Data Persistence:** All changes and undo/redo history are managed in Datastore, allowing consistent state across requests.
-**Efficiency:** All operations assume O(1) time complexity due to the Datastore’s key-based access and efficient querying.
+
 **Graceful Handling of Errors:** The app is designed to handle invalid inputs and unexpected requests smoothly.
 
 **Example Sequences for Testing**
