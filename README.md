@@ -136,9 +136,13 @@ Input:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/end
 Output: CLEANED
 
 **Improvement Idea:**
-I discovered an improvement that could streamline the workflow and enhance the user experience: adding a command to display a complete list of variables and their current values. This feature would provide users with a quick database overview without requiring individual GET requests.
+I discovered an improvement that could streamline the workflow and enhance the user experience: adding a command to display a complete list of variables and their current values. This feature would give users a quick database overview without requiring individual GET requests.
 
 URL:  https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/all
+
+**Returns all history. The history is deleted with the end command**
+URL: https://dorinbenhur-20-ldweiqy2yq-uc.a.run.app/history
+
 
 
 
