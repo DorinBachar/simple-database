@@ -1,4 +1,4 @@
-# Task2: Simple Database App on Google App Engine
+# Task2:Database App on Google App Engine
 
 This project is a simple database application that runs on Google App Engine. The app allows users to send HTTP requests to manage variables, supporting basic commands like setting and unsetting variables, counting by values, and undoing/redoing recent changes.
 
